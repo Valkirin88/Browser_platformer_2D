@@ -21,8 +21,8 @@ public class Lessons : MonoBehaviour
     [SerializeField]
     private SpriteAnimationConfig _spriteAnimationConfig;
 
-    [SerializeField]
-    private CannonView _cannonView;
+    //[SerializeField]
+    //private CannonView _cannonView;
 
     [SerializeField]
     private List<BulletView> _bullets;
