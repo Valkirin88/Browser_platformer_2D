@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainHeroPhysicsWalker
@@ -26,21 +24,22 @@ public class MainHeroPhysicsWalker
         var xAxisInput = Input.GetAxis(Horizontal);
 
         _contactsPoller.Update();
+
         var isGoSideWay = Mathf.Abs(xAxisInput) > _characterView.MovingTresh;
 
         if (isGoSideWay)
             _characterView.SpriteRenderer.flipX = xAxisInput < 0;
 
-        var newVelocity = 0f;
+        var newVelocityX = 0f;
 
         if (isGoSideWay && 
             xAxisInput > 0 || !_contactsPoller.HasLeftContacts && 
             xAxisInput < 0 || !_contactsPoller.HasRightContacts)
         {
-            newVelocity = Time.fixedDeltaTime * _characterView.WalkSpeed * (xAxisInput < 0 ? -1 : 1);
+            newVelocityX = Time.fixedDeltaTime * _characterView.WalkSpeed * (xAxisInput < 0 ? -1 : 1);
         }
 
-        _characterView.Rigidbody.velocity = _characterView.Rigidbody.velocity.Change(x: newVelocity);
+        _characterView.Rigidbody.velocity = _characterView.Rigidbody.velocity.Change(x: newVelocityX);
 
         if (_contactsPoller.IsGrounded && doJump && Mathf.Abs(_characterView.Rigidbody.velocity.y) <= _characterView.FlyTresh)
         {
