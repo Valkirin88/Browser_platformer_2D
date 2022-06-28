@@ -33,8 +33,8 @@ public class MainHeroPhysicsWalker
         var newVelocityX = 0f;
 
         if (isGoSideWay && 
-            xAxisInput > 0 || !_contactsPoller.HasLeftContacts && 
-            xAxisInput < 0 || !_contactsPoller.HasRightContacts)
+            (xAxisInput > 0 || !_contactsPoller.HasLeftContacts) && 
+            (xAxisInput < 0 || !_contactsPoller.HasRightContacts))
         {
             newVelocityX = Time.fixedDeltaTime * _characterView.WalkSpeed * (xAxisInput < 0 ? -1 : 1);
         }
