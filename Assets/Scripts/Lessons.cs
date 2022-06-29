@@ -25,12 +25,19 @@ public class Lessons : MonoBehaviour
     [SerializeField]
     private List<BulletView> _bullets;
 
+    [SerializeField]
+    private CanvasView _canvasView;
+
+    [SerializeField]
+    private ColliderHandler _colliderHandler;
+
     private ParalaxManager _paralaxManager;
     private SpriteAnimator _spriteAnimator;
     //private MainHeroWalker _mainHeroWalker;
     private MainHeroPhysicsWalker _mainHeroPhysicsWalker;
     private AimingMuzzle _aimingMuzzle;
     private BulletsEmitter _bulletsEmitter;
+    private CanvasController _canvasController;
     
          
 
@@ -48,7 +55,7 @@ public class Lessons : MonoBehaviour
         _mainHeroPhysicsWalker = new MainHeroPhysicsWalker(_characterView, _spriteAnimator);
         _aimingMuzzle = new AimingMuzzle(_cannonView.transform, _characterView.transform);
         _bulletsEmitter = new BulletsEmitter(_bullets, _cannonView.MuzzleTransform);
-
+        _canvasController = new CanvasController(_canvasView, _colliderHandler);
 
     }
 
@@ -59,7 +66,9 @@ public class Lessons : MonoBehaviour
         //_mainHeroWalker.Update();
         _aimingMuzzle.Update();
         _bulletsEmitter.Update();
-        
+        _canvasController.Update();
+
+
     }
 
     private void FixedUpdate()
