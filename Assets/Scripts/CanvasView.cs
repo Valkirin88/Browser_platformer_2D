@@ -25,8 +25,7 @@ public class CanvasView : MonoBehaviour
     public void RestartGame()
 
     {
-        Debug.Log("123");
         IsRestart = true;
-               
+    
     }
 }

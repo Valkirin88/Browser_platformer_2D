@@ -22,7 +22,7 @@ public class CanvasController : IDisposable
         StopGame();
     }
 
-    public void ShowGameOver()
+    private void ShowGameOver()
     {
         _canvasView.ImageGameOver.gameObject.SetActive(true);
         StopGame();
@@ -38,14 +38,13 @@ public class CanvasController : IDisposable
 
     public void Update()
     {
-        if (_canvasView.IsRestart == true)
-        {
+        if (!_canvasView.IsRestart)
+            return;
+
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
             _canvasView.IsRestart = false;
-            
-        }
-        
+                       
     }
 
     public void StopGame()

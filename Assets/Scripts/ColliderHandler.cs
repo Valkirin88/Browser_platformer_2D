@@ -12,8 +12,10 @@ public class ColliderHandler : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             _bonusCounter++;
-            if(_bonusCounter == 1)
+           
+            if(_bonusCounter == 8)
             {
+                _bonusCounter = 0;
                 OnAllBonusGot?.Invoke();
             }
         }
