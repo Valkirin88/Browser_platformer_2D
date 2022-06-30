@@ -13,20 +13,26 @@ public class CanvasController : IDisposable
         _colliderHandler = colliderHandler;
 
         _colliderHandler.OnDied += ShowGameOver;
+        _colliderHandler.OnAllBonusGot += ShowLevelComplete;
     }
 
-    
+    private void ShowLevelComplete()
+    {
+        _canvasView.ImageLevelComplete.gameObject.SetActive(true);
+        StopGame();
+    }
+
     public void ShowGameOver()
     {
-        _canvasView.Image.gameObject.SetActive(true);
-        Time.timeScale = 0;
-        _canvasView.RestartButton.gameObject.SetActive(true);
+        _canvasView.ImageGameOver.gameObject.SetActive(true);
+        StopGame();
     }
 
     public void Dispose()
     {
         _colliderHandler.OnDied -= ShowGameOver;
-        _canvasView.Image.gameObject.SetActive(false);
+        _colliderHandler.OnAllBonusGot -= ShowLevelComplete;
+        _canvasView.ImageGameOver.gameObject.SetActive(false);
       
     }
 
@@ -40,6 +46,12 @@ public class CanvasController : IDisposable
             
         }
         
+    }
+
+    public void StopGame()
+    {
+        Time.timeScale = 0;
+        _canvasView.RestartButton.gameObject.SetActive(true);
     }
 
 }
