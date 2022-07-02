@@ -31,6 +31,13 @@ public class Lessons : MonoBehaviour
     [SerializeField]
     private ColliderHandler _colliderHandler;
 
+    [SerializeField]
+    private AIConfig _config;
+
+    [SerializeField]
+    private EnemyView _enemyView;
+
+
     private ParalaxManager _paralaxManager;
     private SpriteAnimator _spriteAnimator;
     //private MainHeroWalker _mainHeroWalker;
@@ -38,7 +45,7 @@ public class Lessons : MonoBehaviour
     private AimingMuzzle _aimingMuzzle;
     private BulletsEmitter _bulletsEmitter;
     private CanvasController _canvasController;
-    
+    private SimplePatrolAI _simplePatrolAI;
          
 
     private void Awake()
@@ -56,7 +63,7 @@ public class Lessons : MonoBehaviour
         _aimingMuzzle = new AimingMuzzle(_cannonView.transform, _characterView.transform);
         _bulletsEmitter = new BulletsEmitter(_bullets, _cannonView.MuzzleTransform);
         _canvasController = new CanvasController(_canvasView, _colliderHandler);
-
+      //_simplePatrolAI = new SimplePatrolAI(_enemyView, new SimplePatrolAIModel(_config));
     }
 
     private void Update()
@@ -74,6 +81,7 @@ public class Lessons : MonoBehaviour
     private void FixedUpdate()
     {
         _mainHeroPhysicsWalker.FixedUpdate();
+     //   _simplePatrolAI.FixedUpdate();
     }
 
     private void OnDestroy()
