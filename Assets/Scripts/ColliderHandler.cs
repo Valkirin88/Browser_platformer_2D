@@ -19,12 +19,14 @@ public class ColliderHandler : MonoBehaviour
                 OnAllBonusGot?.Invoke();
             }
         }
-      else if(collision.GetComponent<BottomView>() != null)
+      else if(collision.GetComponent<BottomView>() || collision.GetComponent<EnemyView>())
         {
-            collision.gameObject.SetActive(false);
+            
             _bonusCounter = 0;
             OnDied?.Invoke();
             
         }
+
+
     }
 }

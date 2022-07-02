@@ -3960,6 +3960,7 @@ GameObject:
   - component: {fileID: 1657403483}
   - component: {fileID: 1657403482}
   - component: {fileID: 1657403484}
+  - component: {fileID: 1657403485}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4001,6 +4002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1657403478}
+  _speedAnimation: 10
+  _spriteRenderer: {fileID: 1657403480}
 --- !u!212 &1657403480
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4040,7 +4043,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3770968622880793076, guid: 19542905a3333f54e975640caa512816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4079,10 +4082,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 3.37
+  radius: 2.46
   height: 2
   canMove: 1
-  maxSpeed: 0.78
+  maxSpeed: 0.82
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -4103,7 +4106,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.59
   pickNextWaypointDist: 0.95
-  endReachedDistance: 0.56
+  endReachedDistance: 1.25
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 0
   whenCloseToDestination: 0
@@ -4150,6 +4153,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 1906102583}
+--- !u!70 &1657403485
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657403477}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 6.41, y: 2.85}
+  m_Direction: 1
 --- !u!1 &1658956446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,7 +5462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2129455768
 BoxCollider2D:
   m_ObjectHideFlags: 0

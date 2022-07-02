@@ -46,6 +46,7 @@ public class Lessons : MonoBehaviour
     private BulletsEmitter _bulletsEmitter;
     private CanvasController _canvasController;
     private SimplePatrolAI _simplePatrolAI;
+    private EnemyAnimation _objectsAnimation;
          
 
     private void Awake()
@@ -63,7 +64,9 @@ public class Lessons : MonoBehaviour
         _aimingMuzzle = new AimingMuzzle(_cannonView.transform, _characterView.transform);
         _bulletsEmitter = new BulletsEmitter(_bullets, _cannonView.MuzzleTransform);
         _canvasController = new CanvasController(_canvasView, _colliderHandler);
-      //_simplePatrolAI = new SimplePatrolAI(_enemyView, new SimplePatrolAIModel(_config));
+        //_simplePatrolAI = new SimplePatrolAI(_enemyView, new SimplePatrolAIModel(_config));
+        _objectsAnimation = new EnemyAnimation(_enemyView, _spriteAnimator, _characterView);
+
     }
 
     private void Update()
@@ -74,6 +77,7 @@ public class Lessons : MonoBehaviour
         _aimingMuzzle.Update();
         _bulletsEmitter.Update();
         _canvasController.Update();
+        _objectsAnimation.Update();
 
 
     }
