@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SimplePatrolAI 
@@ -13,8 +11,10 @@ public class SimplePatrolAI
         _model = model;
     }
 
-    public void FixedUpdate()
+    public void FixedUpdate(Transform playerTransform)
     {
         _view.Rigidbody.velocity = _model.CalculateVelocity(_view.transform.position) * Time.fixedDeltaTime;
+        _model.ChoosePathfindinfMethod(_view, playerTransform);
+       
     }
 }

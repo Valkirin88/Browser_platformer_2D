@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class EnemyView : MonoBehaviour
@@ -13,9 +12,14 @@ public class EnemyView : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
 
+    [SerializeField]
+    private AIPath _aIPath;
+    
     public Rigidbody2D Rigidbody => _rigidbody;
 
     public float SpeedAnimation  => _speedAnimation;
 
-    public SpriteRenderer SpriteRenderer  => _spriteRenderer; 
+    public SpriteRenderer SpriteRenderer  => _spriteRenderer;
+
+    public AIPath AIPath  => _aIPath;
 }

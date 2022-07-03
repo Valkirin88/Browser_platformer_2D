@@ -46,7 +46,7 @@ public class Lessons : MonoBehaviour
     private BulletsEmitter _bulletsEmitter;
     private CanvasController _canvasController;
     private SimplePatrolAI _simplePatrolAI;
-    private EnemyAnimation _objectsAnimation;
+    private ObjectAnmation _objectsAnimation;
          
 
     private void Awake()
@@ -64,8 +64,8 @@ public class Lessons : MonoBehaviour
         _aimingMuzzle = new AimingMuzzle(_cannonView.transform, _characterView.transform);
         _bulletsEmitter = new BulletsEmitter(_bullets, _cannonView.MuzzleTransform);
         _canvasController = new CanvasController(_canvasView, _colliderHandler);
-        //_simplePatrolAI = new SimplePatrolAI(_enemyView, new SimplePatrolAIModel(_config));
-        _objectsAnimation = new EnemyAnimation(_enemyView, _spriteAnimator, _characterView);
+        _simplePatrolAI = new SimplePatrolAI(_enemyView, new SimplePatrolAIModel(_config));
+        _objectsAnimation = new ObjectAnmation(_enemyView, _spriteAnimator);
 
     }
 
@@ -85,7 +85,7 @@ public class Lessons : MonoBehaviour
     private void FixedUpdate()
     {
         _mainHeroPhysicsWalker.FixedUpdate();
-     //   _simplePatrolAI.FixedUpdate();
+        _simplePatrolAI.FixedUpdate(_characterView.transform);
     }
 
     private void OnDestroy()

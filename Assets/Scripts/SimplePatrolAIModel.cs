@@ -5,12 +5,13 @@ public class SimplePatrolAIModel
     private readonly AIConfig _config;
     private Transform _target;
     private int _currentPointIndex;
-
+    
 
     public SimplePatrolAIModel(AIConfig config)
     {
         _config = config;
         _target = GetNextWaypoint();
+        
     }
 
     private Transform GetNextWaypoint()
@@ -31,5 +32,17 @@ public class SimplePatrolAIModel
         return _config.Speed * direction;
     }
 
+    public void ChoosePathfindinfMethod(EnemyView enemyView, Transform playerTransform)
+    {
+        float distance = (enemyView.transform.position - playerTransform.position).magnitude;
+        if(distance < _config.MinDistanceToPlayer)
+        {
+            enemyView.AIPath.enabled = true;
+        }
+        else
+        {
+            enemyView.AIPath.enabled = false;
+        }
+    }
 
 }
