@@ -1,7 +1,7 @@
 using Pathfinding;
 using UnityEngine;
 
-public class EnemyView : MonoBehaviour
+public class EnemyView : MonoBehaviour, IInteractive
 {
     [SerializeField]
     private Rigidbody2D _rigidbody;
@@ -22,4 +22,6 @@ public class EnemyView : MonoBehaviour
     public SpriteRenderer SpriteRenderer  => _spriteRenderer;
 
     public AIPath AIPath  => _aIPath;
+
+   
 }

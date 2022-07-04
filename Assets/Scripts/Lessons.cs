@@ -37,6 +37,9 @@ public class Lessons : MonoBehaviour
     [SerializeField]
     private EnemyView _enemyView;
 
+    [SerializeField]
+    private BonusView _bonusView;
+
 
     private ParalaxManager _paralaxManager;
     private SpriteAnimator _spriteAnimator;
@@ -46,13 +49,13 @@ public class Lessons : MonoBehaviour
     private BulletsEmitter _bulletsEmitter;
     private CanvasController _canvasController;
     private SimplePatrolAI _simplePatrolAI;
-    private ObjectAnmation _objectsAnimation;
+    private ObjectAnmation _enemyAnimation;
+    
          
 
     private void Awake()
     {
-        //_player = Resources.Load<GameObject>(Player);
-        //Instantiate(_player);
+   
     }
 
     private void Start()
@@ -65,7 +68,8 @@ public class Lessons : MonoBehaviour
         _bulletsEmitter = new BulletsEmitter(_bullets, _cannonView.MuzzleTransform);
         _canvasController = new CanvasController(_canvasView, _colliderHandler);
         _simplePatrolAI = new SimplePatrolAI(_enemyView, new SimplePatrolAIModel(_config));
-        _objectsAnimation = new ObjectAnmation(_enemyView, _spriteAnimator);
+        _enemyAnimation = new ObjectAnmation(_enemyView, _spriteAnimator);
+        
 
     }
 
@@ -77,9 +81,8 @@ public class Lessons : MonoBehaviour
         _aimingMuzzle.Update();
         _bulletsEmitter.Update();
         _canvasController.Update();
-        _objectsAnimation.Update();
-
-
+        _enemyAnimation.Update();
+      
     }
 
     private void FixedUpdate()

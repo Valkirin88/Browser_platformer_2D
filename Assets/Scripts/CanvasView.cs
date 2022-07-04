@@ -11,9 +11,7 @@ public class CanvasView : MonoBehaviour
 
     [SerializeField]
     private Button _restartButton;
-    private bool isRestart;
-
-   
+  
     public bool IsRestart { get; set; }
 
     public Image ImageLevelComplete => _imageLevelComplete;
