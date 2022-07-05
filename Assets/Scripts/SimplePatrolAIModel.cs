@@ -32,17 +32,10 @@ public class SimplePatrolAIModel
         return _config.Speed * direction;
     }
 
-    public void ChoosePathfindinfMethod(EnemyView enemyView, Transform playerTransform)
+    public void ChoosePathfindingOption(EnemyView enemyView, Transform playerTransform)
     {
         float distance = (enemyView.transform.position - playerTransform.position).magnitude;
-        if(distance < _config.MinDistanceToPlayer)
-        {
-            enemyView.AIPath.enabled = true;
-        }
-        else
-        {
-            enemyView.AIPath.enabled = false;
-        }
+        enemyView.AIPath.enabled = distance < _config.MinDistanceToPlayer;
     }
 
 }

@@ -14,7 +14,7 @@ public class SimplePatrolAI
     public void FixedUpdate(Transform playerTransform)
     {
         _view.Rigidbody.velocity = _model.CalculateVelocity(_view.transform.position) * Time.fixedDeltaTime;
-        _model.ChoosePathfindinfMethod(_view, playerTransform);
+        _model.ChoosePathfindingOption(_view, playerTransform);
        
     }
 }

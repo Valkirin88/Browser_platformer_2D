@@ -38,19 +38,16 @@ public class CanvasController : IDisposable
 
     public void Update()
     {
-        if (!_canvasView.IsRestart)
-            return;
-        else if ((_gameStopped && _canvasView.IsRestart) || (_gameStopped && Input.GetKeyDown(KeyCode.Return)))
+        if (_gameStopped && (_canvasView.IsRestart || Input.GetKeyDown(KeyCode.Return)))
         {
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
             _canvasView.IsRestart = false;
             _gameStopped = false;
-         
         }
     }
 
-    public void StopGame()
+    private void StopGame()
     {
         Time.timeScale = 0;
         _canvasView.RestartButton.gameObject.SetActive(true);
