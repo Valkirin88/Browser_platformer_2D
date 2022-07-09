@@ -10,7 +10,7 @@ public class ColliderHandler : MonoBehaviour
     {
       if(collision.GetComponent<BonusView>() !=null)
         {
-            collision.gameObject.SetActive(false);
+           // collision.gameObject.SetActive(false);
             _bonusCounter++;
            
             if(_bonusCounter == 8)

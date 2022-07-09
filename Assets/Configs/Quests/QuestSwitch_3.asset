@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8dd67e1ce181ab4a9be5f7b28ebfe1e, type: 3}
-  m_Name: QuestItemsConfig
+  m_Script: {fileID: 11500000, guid: 3dd07538c54d98c4ba4f02b34c0cbb03, type: 3}
+  m_Name: QuestSwitch_3
   m_EditorClassIdentifier: 
-  _questId: 1
-  _questItemIdCollection: 393000000787000006120f00
+  _id: 3
+  _questType: 0

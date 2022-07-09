@@ -15,4 +15,5 @@ MonoBehaviour:
   _quests:
   - {fileID: 11400000, guid: cd5e5d016687f2d45801f3bffeeea9c1, type: 2}
   - {fileID: 11400000, guid: 3512f2d8b15aa4f4db472bba98fef5fb, type: 2}
+  - {fileID: 11400000, guid: 2cb53952a320515419a45d6be246d637, type: 2}
   _questStoryType: 0
