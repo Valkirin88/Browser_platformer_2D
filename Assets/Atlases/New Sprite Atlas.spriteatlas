@@ -42,22 +42,14 @@ SpriteAtlas:
       enableTightPacking: 1
     secondaryTextureSettings: {}
     variantMultiplier: 1
-    packables:
-    - {fileID: 102900000, guid: 672e55a965f644932ba37c62c989e237, type: 3}
+    packables: []
+    totalSpriteSurfaceArea: 0
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites:
-  - {fileID: 21300000, guid: d7886951770614509b79fc9c1bdb69b1, type: 3}
-  - {fileID: 21300000, guid: 39138034d63f44666a7ea1bf273eda08, type: 3}
-  - {fileID: 21300000, guid: a6adcfb84d9054ac486ef7a10722243d, type: 3}
-  - {fileID: 21300000, guid: 417f4d0e791d3450d9f1009ce4274222, type: 3}
-  m_PackedSpriteNamesToIndex:
-  - hat-man-idle-2
-  - hat-man-idle-3
-  - hat-man-idle-1
-  - hat-man-idle-4
+  m_PackedSprites: []
+  m_PackedSpriteNamesToIndex: []
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0
